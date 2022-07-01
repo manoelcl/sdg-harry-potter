@@ -1,10 +1,18 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Main from "./views/Main";
 
+<div>Holi</div>;
 function App() {
   return (
-    <div className="App">
-      <div>Holi</div>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="*" element={<div>Content not found</div>} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
@@ -31,4 +39,7 @@ http://hp-api.herokuapp.com/api/characters
 "actor":"Daniel Radcliffe",
 "alternate_actors":[],
 "alive":true,
-"image":"http://hp-api.herokuapp.com/images/harry.jpg"}, */
+"image":"http://hp-api.herokuapp.com/images/harry.jpg"},
+http://hp-api.herokuapp.com/api/characters
+https://www.figma.com/file/oIGGpFh6M0a2AtRwULdqO3/SDG-HP-Wireframe?node-id=0%3A1
+*/
