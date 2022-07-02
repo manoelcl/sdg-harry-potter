@@ -1,14 +1,19 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Main from "./views/Main";
 
-<div>Holi</div>;
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Character from "./views/Character";
+import Main from "./views/Main";
+import Favourites from "./views/Favourites";
+
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path="/" element={<Main />} />
+          <Route path="/:characterId" element={<Character />} />
+          <Route path="/favourites" element={<Favourites />} />
           <Route path="*" element={<div>Content not found</div>} />
         </Routes>
       </div>
