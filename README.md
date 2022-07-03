@@ -1,3 +1,44 @@
+# Design documents
+
+This is a React frontend for the Harry Potter characters API [HP-API](https://hp-api.herokuapp.com/).
+It's deployed in the following [Vercel site](https://sdg-harry-potter.vercel.app/)
+
+- It allows you to search characters by house, origins, name and more.
+- You can even save your favourites or remember the last ones you visited.
+- Design is responsive and developed using plain CSS.
+
+# Design documents
+
+## Wireframe
+View the original document in the [Figma page](https://www.figma.com/file/oIGGpFh6M0a2AtRwULdqO3/SDG-HP-Wireframe?node-id=0%3A1).
+
+### Wireframe Main
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Wireframes/SDG-HP%20Wireframe%20Main.jpg)
+### Wireframe Favourites
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Wireframes/SDG-HP%20Wireframe%20Favs.jpg)
+### Wireframe Characters
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Wireframes/SDG-HP%20Wireframe%20Character.jpg)
+
+## Design
+
+View the original document in the [Figma page](https://www.figma.com/file/Zu3PvrMtMMTHBfbqZWQD4R/SDG-HP-Design?node-id=32%3A140).
+
+### Main page
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Design/Desktop%20-%20Main.jpg)
+
+### Favourites page
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Design/Desktop%20-%20Favorites.jpg)
+
+### Characters page
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Design/Desktop%20-%20Character.jpg)
+
+### Mobile device Main page
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Design/Android%20Small%20-%20Main.jpg)
+
+### Color palette
+
+![screenshot](https://github.com/manoelcl/sdg-harry-potter/blob/main/References/Design/Color%20Palette.jpg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
