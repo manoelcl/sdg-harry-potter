@@ -1,4 +1,5 @@
-# Design documents
+# Wizarding Web
+## Search Harry Potter characters
 
 This is a React frontend for the Harry Potter characters API [HP-API](https://hp-api.herokuapp.com/).
 It's deployed in the following [Vercel site](https://sdg-harry-potter.vercel.app/)
