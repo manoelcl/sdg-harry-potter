@@ -1,1 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative&display=swap");
 
+:root {
+  --color-main-golden: #ffde68;
+  --color-logo-golden: #a48b35;
+  --color-card-background: #201639;
+  --color-background-gradient-gray: #1f1f1f;
+  --color-background-gradient-darkblue: #131b2e;
+  --color-griffindor-red: #5b0000;
+  --color-slytherin-green: #005b09;
+  --color-ravenclaw-blue: #00355b;
+  --color-hufflepuff-yellow: #bf9e2a;
+  --color-text-white: #ffffff;
+}
+
+* {
+  font-family: "Bona Nova", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}

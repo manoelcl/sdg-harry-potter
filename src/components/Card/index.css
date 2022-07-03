@@ -1,0 +1,56 @@
+.card img:nth-of-type(3) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+}
+.card img:nth-of-type(2) {
+  width: 100%;
+  padding-top: 35px;
+  height: 225px;
+  object-fit: contain;
+  object-position: 50% 0%;
+  display: block;
+  mask-image: url(../../icons/cardBack.svg);
+  mask-position: center 1px;
+}
+.card img:nth-of-type(1) {
+  display: block;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: drop-shadow(1rem 1rem 1rem black);
+}
+/* .card .image-box {
+  transform: scale(0.25);
+} */
+.card {
+  position: relative;
+  height: 296px;
+  width: 296px;
+  text-align: center;
+}
+.card p {
+  width: fit-content;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  color: var(--color-text-white);
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-griffindor-red) 30%,
+    var(--color-griffindor-red) 70%,
+    transparent
+  );
+}
+.card button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
