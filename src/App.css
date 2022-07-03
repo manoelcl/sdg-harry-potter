@@ -6,10 +6,11 @@
   --color-card-background: #201639;
   --color-background-gradient-gray: #1f1f1f;
   --color-background-gradient-darkblue: #131b2e;
-  --color-griffindor-red: #5b0000;
+  --color-gryffindor-red: #5b0000;
   --color-slytherin-green: #005b09;
   --color-ravenclaw-blue: #00355b;
   --color-hufflepuff-yellow: #bf9e2a;
+  --color-neutral-gray: #494949;
   --color-text-white: #ffffff;
 }
 
@@ -18,8 +19,38 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--color-text-white);
 }
 
 ul {
   list-style: none;
+}
+
+.App {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    var(--color-background-gradient-gray),
+    var(--color-background-gradient-darkblue)
+  );
+}
+
+h1 {
+  text-align: center;
+  font-family: "Cinzel Decorative", cursive;
+  font-weight: lighter;
+  font-size: 4rem;
+  color: var(--color-logo-golden);
+  mask-image: linear-gradient(black, rgba(0, 0, 0, 0.38));
+}
+h2 {
+  font-weight: normal;
+}
+header h2 {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }

@@ -1,13 +1,14 @@
 import { createContext, useEffect, useState } from "react";
+import { getFromLocalStorage, setIntoLocalStorage } from "../helpers";
 
 export const LocalContext = createContext();
 
 const LocalDataProvider = ({ children }) => {
   const [favourites, setFavourites] = useState(
-    localStorage.getItem("favourites") || []
+    getFromLocalStorage("favourites") || []
   );
 
-  const [recent, setRecent] = useState(localStorage.getItem("recent") || []);
+  const [recent, setRecent] = useState(getFromLocalStorage("recent") || []);
 
   const addToFavourites = (newFav) => {
     setFavourites([...new Set([...favourites, newFav])]);
@@ -18,12 +19,10 @@ const LocalDataProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log(favourites);
-    localStorage.setItem("favourites", favourites);
+    setIntoLocalStorage("favourites", favourites);
   }, [favourites]);
   useEffect(() => {
-    console.log(recent);
-    localStorage.setItem("recent", recent);
+    setIntoLocalStorage("recent", recent);
   }, [recent]);
 
   return (
