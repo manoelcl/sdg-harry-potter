@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
+import { makeSearchReadyCharactersArray } from "../helpers";
 import fetchCharactersService from "../services/fetchCharactersService";
 
 const useCharacters = () => {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState();
 
   const setFetchedCharacters = async () => {
     const fetchData = await fetchCharactersService();
-    setCharacters(fetchData);
+    const searchReady = makeSearchReadyCharactersArray(fetchData);
+
+    setCharacters(searchReady);
   };
 
   useEffect(() => {

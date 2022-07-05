@@ -1,0 +1,49 @@
+.page-selector {
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.page-selector button {
+  background: none;
+  border: none;
+  font-size: 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+}
+
+.page-selector button:hover {
+  transform: scale(1.1);
+}
+
+.page-selector button:first-of-type {
+  background-image: url(../../icons/Button_1.svg);
+  width: 38px;
+  height: 38px;
+}
+.page-selector button:nth-of-type(2) {
+  background-image: url(../../icons/Button_2.svg);
+  width: 28px;
+  height: 34px;
+}
+.page-selector button:nth-of-type(3) {
+  background-image: url(../../icons/Button_2.svg);
+  width: 28px;
+  height: 34px;
+  transform: rotate(180deg);
+}
+.page-selector button:last-of-type {
+  background-image: url(../../icons/Button_1.svg);
+  width: 38px;
+  height: 38px;
+  transform: rotate(180deg);
+}
+
+.page-selector button:nth-of-type(3):hover {
+  transform: rotate(180deg) scale(1.1);
+}
+.page-selector button:last-of-type:hover {
+  transform: rotate(180deg) scale(1.1);
+}

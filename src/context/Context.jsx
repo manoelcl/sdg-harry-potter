@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useCallback, useEffect, useState } from "react";
 import { getFromLocalStorage, setIntoLocalStorage } from "../helpers";
 
 export const LocalContext = createContext();
@@ -11,12 +11,26 @@ const LocalDataProvider = ({ children }) => {
   const [recent, setRecent] = useState(getFromLocalStorage("recent") || []);
 
   const addToFavourites = (newFav) => {
-    setFavourites([...new Set([...favourites, newFav])]);
+    if (favourites.find((favourite) => favourite.name === newFav.name)) return;
+    setFavourites([...favourites, newFav]);
   };
 
-  const addToRecent = (visited) => {
-    setRecent([...new Set([visited, ...recent])].slice(0, 3));
+  const removeFromFavourites = (favToRemove) => {
+    const newArray = favourites;
+    const index = favourites.findIndex(
+      (character) => character.name === favToRemove
+    );
+    newArray.splice(index, 1);
+    setFavourites([...newArray]);
   };
+
+  const addToRecent = useCallback(
+    (visited) => {
+      if (recent[0]?.name === visited.name) return;
+      setRecent([...new Set([visited, ...recent])].slice(0, 3));
+    },
+    [setRecent, recent]
+  );
 
   useEffect(() => {
     setIntoLocalStorage("favourites", favourites);
@@ -27,7 +41,13 @@ const LocalDataProvider = ({ children }) => {
 
   return (
     <LocalContext.Provider
-      value={{ favourites, addToFavourites, recent, addToRecent }}
+      value={{
+        favourites,
+        addToFavourites,
+        removeFromFavourites,
+        recent,
+        addToRecent,
+      }}
     >
       {children}
     </LocalContext.Provider>

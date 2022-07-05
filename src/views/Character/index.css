@@ -1,0 +1,107 @@
+.character-view {
+  margin: 1rem auto;
+  max-width: 1200px;
+  display: grid;
+
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto auto auto auto auto;
+  grid-template-areas:
+    "base hogwarts image"
+    "base wizard image"
+    "card wizard cardback"
+    "card wand cardback"
+    "description description description";
+  align-items: start;
+}
+
+.character-view section {
+  line-height: 2rem;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--color-main-golden);
+  margin: 1rem;
+}
+.character-view section p {
+  text-align: center;
+  font-size: 1.2rem;
+}
+.character-view section p,
+.character-view section h3 {
+  margin-right: 2rem;
+  margin-bottom: 0.5rem;
+}
+.character-view section h3,
+.character-view section h2 {
+  border-bottom: 1px solid var(--color-main-golden);
+}
+.character-view section h2,
+.character-view section h3 {
+  font-weight: lighter;
+}
+.character-view section h2 {
+  margin-bottom: 2rem;
+}
+.character-view .character-image {
+  grid-area: image;
+  border: 1px solid var(--color-main-golden);
+  border-radius: 1rem;
+  margin: 1rem;
+  width: calc(100% - 2rem);
+}
+.character-view .character-base {
+  grid-area: base;
+}
+.character-view .character-hogwarts {
+  grid-area: hogwarts;
+}
+.character-view .character-wizard {
+  grid-area: wizard;
+}
+.character-view .character-wand {
+  grid-area: wand;
+}
+.character-view .character-description {
+  grid-area: description;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+.character-view .card:last-of-type {
+  grid-area: cardback;
+}
+.character-view .card:last-of-type img:nth-of-type(1) {
+  z-index: 3;
+}
+.character-view .card {
+  grid-area: card;
+}
+@media (max-width: 1000px) {
+  .character-view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .character-view .character-image {
+    max-width: 300px;
+  }
+  .character-view section {
+    width: calc(100% - 2rem);
+  }
+  .character-view .character-description {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-content: center;
+  }
+  .character-view .character-description > * {
+    flex-basis: 300px;
+  }
+  .character-view .card,
+  .character-view .cardback,
+  .character-view .card *,
+  .character-view .cardback * {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}

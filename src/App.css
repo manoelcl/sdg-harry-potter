@@ -27,11 +27,14 @@ ul {
 }
 
 .App {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-image: linear-gradient(
     var(--color-background-gradient-gray),
     var(--color-background-gradient-darkblue)
   );
+  overflow: hidden;
 }
 
 h1 {
@@ -41,16 +44,92 @@ h1 {
   font-size: 4rem;
   color: var(--color-logo-golden);
   mask-image: linear-gradient(black, rgba(0, 0, 0, 0.38));
+  margin-bottom: 0rem;
+  line-height: 4rem;
 }
+
 h2 {
   font-weight: normal;
+  padding: 0 1rem;
 }
+
 header h2 {
   text-align: center;
 }
 
-@media (max-width: 600px) {
+.header-container h1 {
+  grid-area: title;
+}
+.header-container h2 {
+  grid-area: subtitle;
+}
+
+.header-container {
+  display: grid;
+  margin: 0 auto;
+  padding: 0 1rem;
+  grid-template-columns: 55px 1fr 55px;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "first title last"
+    "first subtitle last";
+  align-items: end;
+  max-width: 1200px;
+}
+
+.first {
+  grid-area: first;
+}
+
+.last {
+  grid-area: last;
+}
+
+header {
+  border-bottom: 1px solid var(--color-main-golden);
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+}
+
+main {
+  flex-grow: 1;
+  margin: 0 auto;
+  width: min(1200px, 100%);
+  height: 100%;
+}
+
+@media (max-width: 745px) {
   h1 {
     font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  header h2 {
+    align-self: baseline;
+    font-size: 1.2rem;
+  }
+  .header-container {
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "title title title"
+      "first subtitle last";
+  }
+}
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1rem;
   }
 }
