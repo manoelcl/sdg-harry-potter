@@ -15,7 +15,6 @@ export const Fav = ({ className, character }) => {
         alt="unfav"
         onClick={() => {
           removeFromFavourites(character.name);
-          console.log(character.name);
         }}
         className="fav"
       />

@@ -1,0 +1,25 @@
+.error-displayer {
+  display: flex;
+  flex-direction: column;
+  color: brown;
+  background-color: var(--color-card-background);
+  font-size: large;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.error-displayer h2 {
+  font-weight: bold;
+  text-align: center;
+  color: brown;
+  font-size: 2rem;
+}
+.error-displayer h3 {
+  text-align: center;
+  color: white;
+  font-size: 1.8rem;
+}
+.error-displayer button {
+  color: brown;
+  margin: 0 auto;
+}

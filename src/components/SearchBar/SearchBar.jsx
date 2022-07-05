@@ -5,7 +5,7 @@ export const SearchBar = ({ initial, callback }) => {
   const [advancedSearch, setAdvancedSearch] = useState(
     initial.get("advancedSearch") === "true" || false
   );
-  console.log(initial.get("search"));
+
   const formRef = useRef();
 
   const handleForm = (e) => {

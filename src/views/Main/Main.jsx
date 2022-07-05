@@ -10,12 +10,13 @@ import PageSelector from "../../components/PageSelector";
 import SearchBar from "../../components/SearchBar";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
+import { ErrorDisplayer } from "../../components/ErrorDisplayer/ErrorDisplayer";
 
 export const Main = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  const characters = useCharacters();
+  const { characters, error } = useCharacters();
   const [filteredCharacters, setFilteredCharacters] = useState();
 
   const [currentPage, setCurrentPage] = useState(
@@ -69,6 +70,7 @@ export const Main = () => {
     setFilteredCharacters(results);
   }, [characters, formData]);
 
+  if (error) return <ErrorDisplayer error={error} />;
   if (!characters) return <div>Loading</div>;
   return (
     <>
@@ -116,7 +118,9 @@ export const Main = () => {
                 length={filteredCharacters.length}
               />
             </>
-          ) : null}
+          ) : (
+            <div>Processing...</div>
+          )}
         </section>
       </main>
       <Footer />

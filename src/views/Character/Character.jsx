@@ -9,10 +9,11 @@ import useCharacters from "../../hooks/useCharacters";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import Button from "../../components/Button";
+import { ErrorDisplayer } from "../../components/ErrorDisplayer/ErrorDisplayer";
 
 export const Character = () => {
   const navigate = useNavigate();
-  const characters = useCharacters();
+  const { characters, error } = useCharacters();
   const { addToRecent } = useContext(LocalContext);
   const { characterId } = useParams();
   const [pageCharacter, setPageCharacter] = useState();
@@ -32,7 +33,7 @@ export const Character = () => {
 
     setPageCharacter(characters[index]);
   }, [characters, characterId, navigate, addToRecent]);
-
+  if (error) return <ErrorDisplayer error={error} />;
   if (!pageCharacter) return <div>Loading...</div>;
 
   return (
