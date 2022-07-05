@@ -39,7 +39,11 @@ export const Main = () => {
       for (let key of formData.keys()) {
         if (key === "search") {
           if (!character.searchString.includes(formData.get(key))) return false;
-        } else if (key !== "orderBy" && key !== "order") {
+        } else if (
+          key !== "orderBy" &&
+          key !== "order" &&
+          key !== "advancedSearch"
+        ) {
           if (formData.get(key) && character[key] !== formData.get(key))
             return false;
         }
@@ -81,7 +85,7 @@ export const Main = () => {
         <section>
           <h2>Recently visited:</h2>
           {recent.length > 0 ? (
-            <CardList characterArray={recent} />
+            <CardList additionalClass="exception" characterArray={recent} />
           ) : (
             <div className="card-list">
               <h2>No visited characters yet</h2>

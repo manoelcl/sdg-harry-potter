@@ -22,6 +22,9 @@
   border: 1px solid var(--color-main-golden);
   margin: 1rem;
 }
+.character-view section h2 {
+  padding: 0;
+}
 .character-view section p {
   text-align: center;
   font-size: 1.2rem;
@@ -71,10 +74,17 @@
   grid-area: cardback;
 }
 .character-view .card:last-of-type img:nth-of-type(1) {
-  z-index: 3;
+  z-index: 1;
+}
+
+.character-view .card:last-of-type p {
+  bottom: 150px;
 }
 .character-view .card {
   grid-area: card;
+}
+.character-view .card:last-of-type img.fav {
+  z-index: -2;
 }
 @media (max-width: 1000px) {
   .character-view {

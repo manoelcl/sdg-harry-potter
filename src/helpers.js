@@ -48,7 +48,20 @@ export const setPageFromParams = (params) => {
   return +params.get("page") || 0;
 };
 
-const allowedKeys = ["search", "house", "orderBy", "order", "ancestry"];
+const allowedKeys = [
+  "search",
+  "house",
+  "orderBy",
+  "order",
+  "ancestry",
+  "gender",
+  "species",
+  "isAlive",
+  "isStaff",
+  "isStudent",
+  "isWizard",
+  "advancedSearch",
+];
 
 export const setFormDataFromParams = (params) => {
   const formData = new FormData();
@@ -71,6 +84,10 @@ export const makeSearchReadyCharactersArray = (charactersArray) => {
         " " +
         character.alternate_actors.join(" ")
       ).toUpperCase(),
+      isAlive: character.alive ? "true" : "false",
+      isStaff: character.hogwartsStaff ? "true" : "false",
+      isStudent: character.hogwartsStudent ? "true" : "false",
+      isWizard: character.wizard ? "true" : "false",
     };
   });
 };

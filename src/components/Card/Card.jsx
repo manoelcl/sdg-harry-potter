@@ -7,11 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { colorDictionary } from "../../helpers";
 import Fav from "../Fav";
 
-export const Card = ({ character }) => {
+export const Card = ({ character, additionalClass }) => {
   const navigate = useNavigate();
 
   return (
-    <article className="card">
+    <article className={additionalClass ? `card ${additionalClass}` : "card"}>
       <div className="image-box">
         <img className="img" alt="background" src={cardBack}></img>
         <img

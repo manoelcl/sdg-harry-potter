@@ -3,21 +3,22 @@ select {
 }
 .search-bar {
   display: flex;
+
   flex-wrap: wrap;
+  align-items: center;
   border: 1px solid var(--color-main-golden);
   margin: 1rem;
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 2rem;
 }
-.search-bar > * {
+.search-bar * {
   background-color: white;
   color: dimgray;
   box-shadow: 0 0 1rem inset rgba(0, 0, 0, 0.479);
   font-size: 1.3rem;
+  padding: 0.25rem;
   border: 1px solid var(--color-main-golden);
   border-radius: 1rem;
-  padding: 0.25rem 1rem;
-  margin: 0.25rem;
 }
 .search-bar select {
   background-color: white;
@@ -37,6 +38,37 @@ select {
 }
 .search-bar select * {
   color: dimgray;
+}
+.main-field {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.secondary-fields {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .main-field {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .secondary-fields {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .secondary-fields * {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .secondary-fields {
+    grid-template-columns: 1fr;
+  }
 }
 @media (max-width: 745px) {
   .search-bar {

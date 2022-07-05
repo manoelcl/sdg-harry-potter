@@ -72,7 +72,10 @@
 }
 
 @media (max-width: 745px) {
-  .card {
+  .card.exception {
+    scroll-snap-align: start;
+  }
+  .card:not(.exception) {
     height: 50px;
     width: auto;
     display: grid;
@@ -83,21 +86,25 @@
     grid-template-columns: 40px 1fr 35px;
     transition: none;
   }
-  .card:hover {
+
+  .card:hover:not(.exception) {
     transform: none;
   }
-  .card .img:nth-last-of-type(2) {
+
+  .card:not(.exception) .img:nth-last-of-type(2) {
     transition: none;
   }
-  .card .img:nth-last-of-type(3) {
+
+  .card:not(.exception) .img:nth-last-of-type(3) {
     filter: none;
   }
-  .card:hover .img:nth-last-of-type(2) {
+
+  .card:hover:not(.exception) .img:nth-last-of-type(2) {
     transition: none;
     transform: none;
   }
 
-  .card p {
+  .card:not(.exception) p {
     position: static;
     width: 100%;
     margin-left: 0.5rem;
@@ -112,17 +119,19 @@
     white-space: nowrap;
     overflow: hidden;
   }
-  .card p:hover {
+
+  .card:not(.exception) p:hover {
     transform: none;
   }
 
-  .card .image-box {
+  .card:not(.exception) .image-box {
     width: 300px;
     filter: drop-shadow(12px 12px black);
     transform: translateX(20px) translateY(-16px) scale(0.25);
     z-index: 2;
   }
-  .card .fav {
+
+  .card:not(.exception) .fav {
     position: static;
     z-index: 2;
     transform: translateY(-7px);
