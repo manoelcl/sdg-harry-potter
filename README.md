@@ -5,8 +5,15 @@ This is a React frontend for the Harry Potter characters API [HP-API](https://hp
 It's deployed in the following [Vercel site](https://sdg-harry-potter.vercel.app/)
 
 - It allows you to search characters by house, origins, name and more.
-- You can even save your favourites or remember the last ones you visited.
+- You can save your favourites or remember the last ones you visited.
 - Design is responsive and developed using plain CSS.
+
+# Start this repo
+
+- Download the repository
+- Run `npm start` in the repository folder
+- The website should open in your browser at [http://localhost:3000](http://localhost:3000).
+- For more options, see the `Getting Started with Create React App` at the end of this document or see the full documentation at [Create React App](https://github.com/facebook/create-react-app) for more info.
 
 # Design documents
 
